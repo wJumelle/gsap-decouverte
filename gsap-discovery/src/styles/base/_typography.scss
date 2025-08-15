@@ -1,0 +1,29 @@
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: var(--ft-size);
+    line-height: var(--ft-line-height);
+}
+
+/* Titres */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    line-height: 1.5em;
+}
+
+/* Liens */
+a {
+    text-underline-offset: 4px;
+    text-decoration-thickness: var(--border-size);
+}
+
+a:hover,
+a:focus {
+    text-decoration: none;
+}

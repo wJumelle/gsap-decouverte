@@ -1,0 +1,24 @@
+// Définition des variables CSS
+:root,
+*::before,
+*::after,
+::backdrop {
+    --spacer: 8px;
+    --clr-primary: #5235F4;
+    --clr-secondary: #F43578;
+    --clr-tertiary: #1E7702;
+    --clr-quartenary: #C22AB9;
+    --clr-neutral-min: #FFF;
+    --clr-primary-neutral: #EAE7FE;
+    --clr-secondary-neutral: #FEE7EF;
+    --clr-tertiary-neutral: #FAFEE7;
+    --clr-quartenary-neutral: #E7FEF6;
+    --clr-neutral-max: #000;
+    --clr-disabled: #939393;
+    --ft-size: 2.7rem;
+    --ft-line-height: 1.2em;
+    --window-border-size: 3rem;
+    --border-size: 4px;
+    --anim-easing: ease-in-out;
+    --anim-duration: 1s;
+}
