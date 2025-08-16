@@ -61,6 +61,25 @@
                     C'est souvent ce nom que va porter la constante lorsque l'on va nommer notre élément pour
                     gérer son déclenchement.<br/>
                 </p>
+                <h3>2 - gsap.from()</h3>
+                <p>
+                    C'est l'inverse de la méthode to(), on a l'état initial de notre carré qui
+                    est toujours le même, soit left = 0.
+                    Ici, on indique donc une animation qui simule un nouvel état d'origine (B) pour aller
+                    vers notre état initial (A).
+                </p>
+                <code>
+                    const tween_2 = gsap.from(".animation--2 .square", { x: 600 });<br/>
+                    document.getElementById('anim_2_button').addEventListener('click', () => {<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;tween_2.restart();<br/>
+                    });
+                </code>
+                <div class="preview animation-container animation--2">
+                    <div class="square-ghost square-ghost--a">A</div>
+                    <div class="square">Square</div>
+                    <div class="square-ghost square-ghost--b">B</div>
+                    <button id="anim_2_button" class="button">Rejouer l'animation</button>
+                </div>
             </section>
         </main>
         <script type="module" src="../scripts/anim_1.js"></script>

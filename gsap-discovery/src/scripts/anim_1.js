@@ -10,4 +10,10 @@ window.addEventListener('DOMContentLoaded', () => {
     document.getElementById('anim_1_button').addEventListener('click', () => {
         tween_1.restart();
     });
+
+    // Animation 2
+    const tween_2 = gsap.from(".animation--2 .square", { x: 600 });
+    document.getElementById('anim_2_button').addEventListener('click', () => {
+        tween_2.restart();
+    });
 });
