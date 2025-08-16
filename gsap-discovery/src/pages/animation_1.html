@@ -54,7 +54,7 @@
                     <div class="square-ghost square-ghost--a">A</div>
                     <div class="square">Square</div>
                     <div class="square-ghost square-ghost--b">B</div>
-                    <button id="anim_1_button" class="button">Rejouer l'animation</button>
+                    <button id="anim_1_button" class="button">Jouer l'animation</button>
                 </div>
                 <p>
                     On a ainsi créé un <strong>tween</strong>, c'est à dire une animation.
@@ -78,7 +78,25 @@
                     <div class="square-ghost square-ghost--a">A</div>
                     <div class="square">Square</div>
                     <div class="square-ghost square-ghost--b">B</div>
-                    <button id="anim_2_button" class="button">Rejouer l'animation</button>
+                    <button id="anim_2_button" class="button">Jouer l'animation</button>
+                </div>
+                <h3>3 - gsap.fromTo()</h3>
+                <p>
+                    Cette méthode est la fusion des deux premières, on définit à la fois
+                    la valeur de l'état de début/origine et la valeur de l'état de fin.<br/>
+                    Elle permet de gérer avec certitude les différents états d'une animation.
+                </p>
+                <code>
+                    const tween_3 = gsap.fromTo(".animation--3 .square", { x: 0 }, { x: 600 });<br/>
+                    document.getElementById('anim_3_button').addEventListener('click', () => {<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;tween_3.restart();<br/>
+                    });
+                </code>
+                <div class="preview animation-container animation--3">
+                    <div class="square-ghost square-ghost--a">A</div>
+                    <div class="square">Square</div>
+                    <div class="square-ghost square-ghost--b">B</div>
+                    <button id="anim_3_button" class="button">Jouer l'animation</button>
                 </div>
             </section>
         </main>
