@@ -1,0 +1,76 @@
+/* Code */
+code {
+    display: block;
+    width: var(--max-chars);
+    padding: 1.5rem;
+    background-color: var(--clr-primary-neutral);
+    border-radius: var(--border-radius-xs);
+}
+
+/* Elements */
+.square,
+.square-ghost {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 10ch;
+    aspect-ratio: 1 / 1;
+    background-color: var(--clr-primary);
+    border: calc(var(--border-size) / 2) solid var(--clr-primary);
+    border-radius: var(--border-radius-xs);
+    font-weight: bold;
+}
+
+.square-ghost {
+    opacity: 0.25;
+    background-color: unset;
+    border-style: dashed;
+}
+
+.square {
+    color: var(--clr-neutral-min);
+}
+
+.preview.animation-container {
+    position: relative;
+}
+
+.button {
+    padding: .25em .35em;
+    background-color: var(--clr-primary);
+    color: var(--clr-neutral-min);
+    border: var(--border-size) solid var(--clr-primary);
+    border-radius: var(--border-radius-xs);
+    cursor: pointer;
+}
+
+.button:hover,
+.button:focus {
+    background-color: var(--clr-neutral-min);
+    color: var(--clr-primary);
+}
+
+.preview .button {
+    margin-top: calc(var(--spacer) * 2);
+}
+
+/* Animation 1 */
+.animation--1 {
+    .square-ghost {
+        position: absolute;
+        top: 0;
+    }
+
+    .square-ghost--a {
+        left: 0;
+    }
+
+    .square-ghost--b {
+        left: 600px;
+    }
+
+    .square {
+        position: relative;
+        z-index: 5;
+    }
+}

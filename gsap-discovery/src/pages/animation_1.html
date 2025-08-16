@@ -3,17 +3,65 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Animation 1</title>
+        <title>Getting started</title>
     </head>
-    <body class="page--category-1">
+    <body class="page page--category-1">
         <header>
             <nav>
                 <a href="../../index.html">Retour à l'accueil</a>
             </nav>
-            <h1>Animation 1</h1>
+            <h1>Getting started</h1>
         </header>
         <main>
-            <p>Bienvenue dans le chapitre autour de l'animation 1</p>
+            <p>Il est l'heure de commencer à apprendre ! 🤓</p>
+            <section>
+                <h2>Décomposition d'un appel GSAP</h2>
+                <code>
+                    gsap.to(".square", { x: 600 })
+                </code>
+                <p>
+                    Ici on demande à <strong>gsap</strong> de faire appel à la <strong>méthode</strong> to(),
+                    de cibler la <strong>target</strong> ".square", donc notre élément HTML possédant la classe "square",
+                    et d'y appliquer les transformations fournies en <strong>variables</strong>, ici {x: 600}.
+                </p>
+                <span>
+                    Il existe 4 méthodes différentes :
+                </span>
+                <ul class="list">
+                    <li>gsap.to()</li>
+                    <li>gsap.from()</li>
+                    <li>gsap.fromTo()</li>
+                    <li>gsap.set()</li>
+                </ul>
+            </section>
+            <section>
+                <h2>Découverte des différentes méthodes</h2>
+                <h3>1 - gsap.to()</h3>
+                <p>
+                    Elle correspond à notre première méthode. C'est basiquement la plus utilisée car elle
+                    représente la fonctionnalité la plus attendue : on part d'un état A (l'origine) et
+                    on anime jusqu'à un état B.
+                    L'origine correspond au positionnement initial de l'élément HTML tel qu'il est positionné
+                    dans le DOM à l'aide du CSS.
+                </p>
+                <code>
+                    const tween_1 = gsap.to(".animation--1 .square", { x: 600 });<br/>
+                    document.getElementById('anim_1_button').addEventListener('click', () => {<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;tween_1.restart();<br/>
+                    });
+                </code>
+                <div class="preview animation-container animation--1">
+                    <div class="square-ghost square-ghost--a">A</div>
+                    <div class="square">Square</div>
+                    <div class="square-ghost square-ghost--b">B</div>
+                    <button id="anim_1_button" class="button">Rejouer l'animation</button>
+                </div>
+                <p>
+                    On a ainsi créé un <strong>tween</strong>, c'est à dire une animation.
+                    C'est souvent ce nom que va porter la constante lorsque l'on va nommer notre élément pour
+                    gérer son déclenchement.<br/>
+                </p>
+            </section>
         </main>
         <script type="module" src="../scripts/anim_1.js"></script>
     </body>

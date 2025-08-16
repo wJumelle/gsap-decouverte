@@ -4,21 +4,26 @@
 *::after,
 ::backdrop {
     --spacer: 8px;
-    --clr-primary: #5235F4;
-    --clr-secondary: #F43578;
-    --clr-tertiary: #1E7702;
-    --clr-quartenary: #C22AB9;
+    --clr-purple-blue: #5235F4;
+    --clr-purple-blue-neutral: #EAE7FE;
+    --clr-pink: #F43578;
+    --clr-pink-neutral: #FEE7EF;
+    --clr-green: #1E7702;
+    --clr-green-neutral: #FAFEE7;
+    --clr-purple: #C22AB9;
+    --clr-purple-neutral: #E7FEF6;
+    --clr-primary: var(--clr-purple-blue);
+    --clr-primary-neutral: var(--clr-purple-blue-neutral);
     --clr-neutral-min: #FFF;
-    --clr-primary-neutral: #EAE7FE;
-    --clr-secondary-neutral: #FEE7EF;
-    --clr-tertiary-neutral: #FAFEE7;
-    --clr-quartenary-neutral: #E7FEF6;
     --clr-neutral-max: #000;
     --clr-disabled: #939393;
     --ft-size: 2.7rem;
     --ft-line-height: 1.2em;
     --window-border-size: 3rem;
-    --border-size: 4px;
+    --border-size: 2px;
+    --border-radius: 25px;
+    --border-radius-xs: 8px;
     --anim-easing: ease-in-out;
     --anim-duration: 1s;
+    --max-chars: 80ch;
 }

@@ -26,3 +26,7 @@ npm install gsap
 // ./src/scripts/main.js
 import { gsap } from "gsap";
 ```
+
+## Getting Started
+
+On début le [**getting started**](https://gsap.com/resources/get-started), let's move !
