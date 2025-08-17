@@ -300,6 +300,25 @@
                     </svg>
                     <button id="anim_6_button" class="button">Jouer l'animation</button>
                 </div>
+                <h3>En fait.. ça peut vraiment tout animer</h3>
+                <p>
+                    C'est un bon résumé ! Que ça soit une valeur numérique, une chaine de caractère simple ou
+                    complexe (contenant des nombres), tous ces éléments peuvent être animés !<br />
+                    <strong>On peut en effet animer tout ce que l'on veut à l'intérieur de n'importe quel objet, et cet
+                    objet n'a même pas besoin d'être un élément du DOM !</strong><br /><br />
+                    Ci-dessous, nous pouvons voir que nous sommes en capacité d'animer les propriétés
+                    <strong>myNum</strong> et <strong>myColor</strong> et notre <strong>obj</strong>.
+                </p>
+                <code>
+                    //create an object<br />
+                    let obj = { myNum: 10, myColor: "red" };<br /><br />
+
+                    gsap.to(obj, {<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;myNum: 200,<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;myColor: "blue",<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;onUpdate: () => console.log(obj.myNum, obj.myColor)
+                    });
+                </code>
             </section>
         </main>
         <script type="module" src="../scripts/anim_1.js"></script>
