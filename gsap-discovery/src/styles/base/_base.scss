@@ -11,3 +11,7 @@ body {
     min-height: 100%;
     padding: 3rem;
 }
+
+hr {
+    border-top: calc(var(--border-size) * 2) solid var(--clr-primary);
+}

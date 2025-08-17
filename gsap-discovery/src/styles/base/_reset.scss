@@ -99,6 +99,7 @@ section,
 p:not(:last-child),
 ul, ol,
 code,
-div.preview {
+div.preview,
+hr {
     margin-bottom: calc(var(--spacer) * 4);
 }

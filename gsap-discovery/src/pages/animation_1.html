@@ -34,6 +34,7 @@
                     <li>gsap.set()</li>
                 </ul>
             </section>
+            <hr>
             <section>
                 <h2>Découverte des différentes méthodes</h2>
                 <h3>1 - gsap.to()</h3>
@@ -119,6 +120,39 @@
                     <button id="anim_4_button_play" class="button">Jouer la non animation</button>
                     <button id="anim_4_button_reset" class="button">Réinitialiser la non animation</button>
                 </div>
+            </section>
+            <hr>
+            <section>
+                <h2>Les targets</h2>
+                <p>
+                    Ce que GSAP appelle les <strong>targets</strong> ce sont tout simplement
+                    les cibles de notre animation.<br />
+                    Ces cibles peuvent être de différentes natures mais concrètement derrière ce premier
+                    paramètre de notre méthode se cache un simple appel à <strong>document.querySelectorAll()</strong>.
+                </p>
+                <span>Voici les natures différentes que peuvent prendre les targets</span>
+                <ul>
+                    <li>un sélecteur CSS simple ou complexe</li>
+                    <li>une variable</li>
+                    <li>un tableau d'instance</li>
+                </ul>
+                <code>
+                    // une classe ou un ID<br />
+                    gsap.to(".box", { x: 200 });<br />
+                    gsap.to("#myBox", { x: 200 });<br /><br />
+
+                    // un sélecteur CSS complexe<br />
+                    gsap.to("section > .box", { x: 200 });<br /><br />
+
+                    // une variable<br />
+                    let box = document.querySelector(".box");<br />
+                    gsap.to(box, { x: 200 })<br /><br />
+
+                    // un tableau d'éléments<br />
+                    let square = document.querySelector(".square");<br />
+                    let circle = document.querySelector(".circle");<br />
+                    gsap.to([square, circle], { x: 200 })
+                </code>
             </section>
         </main>
         <script type="module" src="../scripts/anim_1.js"></script>
