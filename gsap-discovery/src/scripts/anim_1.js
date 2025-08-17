@@ -23,12 +23,27 @@ window.addEventListener('DOMContentLoaded', () => {
         tween_3.restart();
     });
 
-    // Animation 3 - set()
+    // Animation 4 - set()
     const tween_4 = gsap.set(".animation--4 .square", { x: 600, paused: true });
     document.getElementById('anim_4_button_play').addEventListener('click', () => {
         tween_4.restart();
     });
     document.getElementById('anim_4_button_reset').addEventListener('click', () => {
         tween_4.reverse();
+    });
+
+    // Animation 5 - SVG
+    const tween_5 = gsap.to('.animation--5 .svgBox', {
+        duration: 2,
+        x: 100,
+        xPercent: -100,
+        paused: true,
+        attr: {
+            fill: "#5235F4",
+            rx: 50
+        }
+    });
+    document.getElementById('anim_5_button').addEventListener('click', () => {
+        tween_5.restart();
     });
 });

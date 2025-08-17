@@ -65,7 +65,8 @@
                 <h3>2 - gsap.from()</h3>
                 <p>
                     C'est l'inverse de la méthode to(), on a l'état initial de notre carré qui
-                    est toujours le même, soit left = 0.
+                    est toujours le même, soit la position par défaut d'un élément positionné relativement,
+                    en haut à gauche.<br />
                     Ici, on indique donc une animation qui simule un nouvel état d'origine (B) pour aller
                     vers notre état initial (A).
                 </p>
@@ -153,6 +154,115 @@
                     let circle = document.querySelector(".circle");<br />
                     gsap.to([square, circle], { x: 200 })
                 </code>
+            </section>
+            <hr>
+            <section>
+                <h2>Les variables</h2>
+                <h3>Les propriétés CSS</h3>
+                <p>
+                    L'objet de variable contient toutes les informations autour de notre animation.<br/>
+                    Il peut s'agir de <strong>simple propriété CSS</strong> ou bien des
+                    <strong>propriétés spécifiques</strong> qui influencent sur le comportement de
+                    l'animation (ex: <strong>duration</strong>, <strong>onComplete</strong>, <strong>repeat</strong>).
+                </p>
+                <p>
+                    Il n'existe pas de liste exacte des propriétés qui peuvent animées puisque toutes
+                    les propriétées CSS en soit peuvent l'être.<br />
+                    GSAP de son coté n'attend qu'une seule chose, que la propriété soit écrite en camelCase.
+                </p>
+                <p class="highlighted">
+                    💡 Tips, et un peu 🚨 attention aussi..<br/>
+                    Cependant, il est conseillé de se tenir à quelques propriétés CSS optimisées pour l'animation.<br />
+                    Et dans ce cas de figure, il en existe surtout deux : <strong>transform</strong> et <strong>opacity</strong>.<br />
+                    En effet, d'autres propriétés CSS s'avèrent être très gourmandes au niveau du CPU et cela
+                    pourrait nuire à l'expérience de l'utilisateur ! (ex: <strong>filter</strong> et <strong>boxShadow</strong>)
+                </p>
+                <p>
+                    C'est pour favoriser l'usage de ces deux propriétés d'ailleurs que GSAP a mis en
+                    place des raccourcis pour les animer.<br />
+                    Ainsi <strong>x</strong> que l'on animait jusque là est un raccourci pour <strong>transform: translateX(x)</strong>.
+                </p>
+                <code>
+                    // Pour ce qui est de transform et opacity
+                    x: 200, // transfrom: translateX(200px)<br />
+                    y: 200, // transfrom: translateY(200px)<br />
+                    xPercent: 50, // transfrom: translateX(50%)<br />
+                    yPercent: 50, // transfrom: translateY(50%)<br />
+                    scale: 2, // transfrom: scale(2)<br />
+                    scaleX: 2, // transfrom: scaleX(2)<br />
+                    scaleY: 2, // transfrom: scaleY(2)<br />
+                    rotation: 90, // transfrom: rotation(90deg)<br />
+                    rotation: "1.25rad", // réalise la transformation en radian, pas d'alternative CSS<br />
+                    transformOrigin: "center 40%", // transform-origin: center 40%<br />
+                    opacity: 0,<br />
+                    autoAlpha: 0, // ajuste les props opacity et visiblity<br />
+                    duration: 1, // animation-duration: 1s<br />
+                    repeat: -1, // animation-iteration-count: infinite<br />
+                    repeat: 2, // animation-iteration-count: 2<br />
+                    delay: 2, // animation-delay: 2s<br />
+                    yoyo: true, // animation-direction: alternate<br /><br />
+
+                    // pour les autres propriétés en camelCase<br />
+                    backgroundColor: 'red',
+                </code>
+                <h3>Les unités</h3>
+                <p>
+                    Par défaut GSAP utilise les pixels (px) et les degrés (deg) pour les propriétés autour
+                    de <strong>transform</strong>, mais il est tout à fait possible d'en utiliser d'autres,
+                    ou bien de lui transmettre un calcul via une fonction.
+                </p>
+                <code>
+                    x: 200, // use default of px<br />
+                    x: "+=200" // relative values<br />
+                    x: '40vw', // or pass in a string with a different unit for GSAP to parse<br />
+                    x: () => window.innerWidth / 2, // you can even use functional values to do a calculation!<br /><br />
+
+                    rotation: 360 // use default of degrees<br />
+                    rotation: "1.25rad" // use radians
+                </code>
+                <h3>Les attributs SVG</h3>
+                <p>
+                    Tout comme les propriétés CSS, les attributs de nos SVG sont animables ! ✨<br/>
+                    Cela veut donc dire qu'avec GSAP nous pouvons animer des attributs comme <strong>fill</strong>,
+                    <strong>width</strong>, <strong>height</strong>, <strong>stroke</strong>, <strong>cx/rx</strong>,
+                    <strong>opacity</strong> ou bien encore l'attribut <strong>viewBox</strong> directement !
+                </p>
+                <p>
+                    Ci-dessous un code test, nous pouvons voir que nous réalisons les transformations
+                    <strong>x: 100</strong> et <strong>xPercent: -100</strong>, pourquoi ?<br />
+                    Tout comme en CSS, nous réalisons souvent ce petit trick, nous déplaçons l'objet
+                    à sa valeur maximal puis on soustrait la taille de l'objet afin qu'il se positionne
+                    dans la limite de l'encadrement, sinon il sortirait du viewbox de notre svg !
+                </p>
+                <code>
+                    // Animation 5 - SVG<br />
+                    const tween_5 = gsap.to('.animation--5 .svgBox', {<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;duration: 2,<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;x: 100,<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;xPercent: -100,<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;paused: true,<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;attr: {<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fill: "#5235F4",<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rx: 50<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;}<br />
+                    });<br />
+                    document.getElementById('anim_5_button').addEventListener('click', () => {<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;tween_5.restart();<br />
+                    });
+                </code>
+                <div class="preview animation-container animation--5">
+                    <svg id="svg" viewBox="0 0 100 100">
+                        <rect fill="#F43578" class="svgBox" x="0" y="35" width="30" height="30" rx="2" />
+                    </svg>
+                    <button id="anim_5_button" class="button">Jouer l'animation</button>
+                </div>
+                <p class="highlighted">
+                    🚨 Attention<br />
+                    Lors de mes tests j'ai voulu gérer l'attribut <strong>fill</strong> en CSS, pour
+                    pouvoir y mettre mes variables, ce qui casse le fonctionnement de GSAP.<br />
+                    En effet, comme j'avais supprimé l'attribut de mon code HTML, GSAP n'était plus en
+                    mesure d' en animer sa valeur.
+                </p>
             </section>
         </main>
         <script type="module" src="../scripts/anim_1.js"></script>
