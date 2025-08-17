@@ -263,6 +263,43 @@
                     En effet, comme j'avais supprimé l'attribut de mon code HTML, GSAP n'était plus en
                     mesure d' en animer sa valeur.
                 </p>
+                <p>
+                    Voici, ci-dessous, une animation qui reprend un peu l'idée que l'on aimerait développer
+                    pour l'expositon Machine arrière : radio.
+                </p>
+                <code>
+                    // Animation 6 - SVG mouvement ghost<br />
+                    const tween_6_1 = gsap.to('.animation--6 .svgBox--animated-1', {<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;duration: 2,<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;y: 35,<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;paused: true,<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;attr: {<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fill: "#5235F4",<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rx: 50<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;}<br />
+                    });<br />
+                    const tween_6_2 = gsap.to('.animation--6 .svgBox--animated-1', {<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;duration: 2,<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;y: "-=35",<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;paused: true,<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;attr: {<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fill: "#5235F4",<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rx: 50<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;}<br />
+                    });<br />
+                    document.getElementById('anim_6_button').addEventListener('click', () => {<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;tween_6_1.restart();<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;tween_6_2.restart();<br />
+                    });
+                </code>
+                <div class="preview animation-container animation--6">
+                    <svg id="svg" viewBox="0 0 100 100">
+                        <rect fill="#F43578" class="svgBox svgBox--animated-1" x="0" y="0" width="30" height="30" rx="2" />
+                        <rect fill="#F43578" class="svgBox" x="35" y="35" width="30" height="30" rx="2" />
+                        <rect fill="#F43578" class="svgBox svgBox--animated-2" x="70" y="70" width="30" height="30" rx="2" />
+                    </svg>
+                    <button id="anim_6_button" class="button">Jouer l'animation</button>
+                </div>
             </section>
         </main>
         <script type="module" src="../scripts/anim_1.js"></script>

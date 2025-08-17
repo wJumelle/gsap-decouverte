@@ -46,4 +46,28 @@ window.addEventListener('DOMContentLoaded', () => {
     document.getElementById('anim_5_button').addEventListener('click', () => {
         tween_5.restart();
     });
+
+    // Animation 6 - SVG mouvement ghost
+    const tween_6_1 = gsap.to('.animation--6 .svgBox--animated-1', {
+        duration: 2,
+        y: 35,
+        paused: true,
+        attr: {
+            fill: "#5235F4",
+            rx: 50
+        }
+    });
+    const tween_6_2 = gsap.to('.animation--6 .svgBox--animated-2', {
+        duration: 2,
+        y: "-=35",
+        paused: true,
+        attr: {
+            fill: "#5235F4",
+            rx: 50
+        }
+    });
+    document.getElementById('anim_6_button').addEventListener('click', () => {
+        tween_6_1.restart();
+        tween_6_2.restart();
+    });
 });
