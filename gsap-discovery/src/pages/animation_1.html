@@ -364,6 +364,38 @@
                     <canvas id="canvas" width="300" height="300"></canvas>
                     <button id="anim_7_button" class="button">Jouer l'animation</button>
                 </div>
+                <h3>Propriétés spéciales</h3>
+                <p>
+                    Pour animer le comportement de nos éléments nous pouvons jouer avec différentes propriétées.<br />
+                    En voici certaines ci-dessous, mais le reste est trouvable dans la
+                    <a href="https://gsap.com/docs/v3/GSAP/Tween/#special-properties">documentation</a>.
+                </p>
+                <ul>
+                    <li>
+                        <strong>duration :</strong> ça permet tout simplement de définir la durée de l'animation.<br/>
+                        <em>Défaut: 0.5</em>
+                    </li>
+                    <li>
+                        <strong>delay :</strong> c'est la durée en seconde avant le déclenchement de l'animation.
+                    </li>
+                    <li>
+                        <strong>repeat :</strong> c'est le nombre de fois où l'animation devra être rejoué.
+                    </li>
+                    <li>
+                        <strong>yoyo :</strong> si cette propriété est défini à "true" au prochain tick de repeat l'animation se jouera dans le sens inversé.<br/>
+                        <em>Défaut : false</em>
+                    </li>
+                    <li>
+                        <strong>stagger :</strong> c'est le temps en seconde qui sépare chacune des animations. C'est utile lorsque la target contient plusieurs éléments.
+                    </li>
+                    <li>
+                        <strong>ease :</strong> permet de controler le rythme de l'animation.<br/>
+                        <em>Défaut: power1.out</em>
+                    </li>
+                    <li>
+                        <strong>onComplete :</strong> permet de définir une fonction qui s'exécute à la fin de l'animation.
+                    </li>
+                </ul>
             </section>
         </main>
         <script type="module" src="../scripts/anim_1.js"></script>
