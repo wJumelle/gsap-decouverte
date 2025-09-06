@@ -319,6 +319,51 @@
                     &nbsp;&nbsp;&nbsp;&nbsp;onUpdate: () => console.log(obj.myNum, obj.myColor)
                     });
                 </code>
+                <h3>Les canvas</h3>
+                <p>
+                    Et oui ! Ils ne font pas exception, il est tout à fait possible d'animer
+                    le rendu d'un canvas à l'aide de GSAP, et cela de manière totalement fluide.
+                </p>
+                <p>
+                    Et à quoi ça peut bien servir ? Et bah tout simplement à animer des rendus
+                    effectués par les libraires comme Three.js, Pixi.js etc. Et ça... J'ACHETE ! 💸
+                </p>
+                <code>
+                    // Animation 7 - Canvas<br />
+                    const canvas = document.getElementById("canvas");<br />
+                    const ctx = canvas.getContext("2d");<br />
+                    ctx.fillStyle = "#F43578";<br /><br />
+
+                    // On va animer la position d'un carré dans notre canvas<br />
+                    let position = { x: 0, y: 0 };<br /><br />
+
+                    // On déclare la fonction qui va nous ppermettre de réinitialiser le canvas à chaque frame<br />
+                    // et de redesinner le carré à sa nouvelle position<br />
+                    function draw() {<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;ctx.clearRect(0, 0, 300, 300);<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;ctx.fillRect(position.x, position.y, 100, 100);<br />
+                    }<br /><br />
+
+                    // On déclare l'animation<br />
+                    // Contrairement à un élément du DOM un canvas a besoin d'être redessiné à chaque frame<br />
+                    // donc on est obligé de déclarer la propriété onUpdate<br />
+                    // on déplace jusqu'à x: 200 et y: 200 car notre carré fait 100x100<br />
+                    const tween_7 = gsap.to(position, {<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;x: 200,<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;y: 200,<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;duration: 2,<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;paused: true,<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;onUpdate: draw<br />
+                    });<br /><br />
+
+                    document.getElementById('anim_7_button').addEventListener('click', () => {<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;tween_7.restart();<br />
+                    });
+                </code>
+                <div class="preview animation-container animation--7">
+                    <canvas id="canvas" width="300" height="300"></canvas>
+                    <button id="anim_7_button" class="button">Jouer l'animation</button>
+                </div>
             </section>
         </main>
         <script type="module" src="../scripts/anim_1.js"></script>

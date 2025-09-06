@@ -70,4 +70,37 @@ window.addEventListener('DOMContentLoaded', () => {
         tween_6_1.restart();
         tween_6_2.restart();
     });
+
+
+
+    // Animation 7 - Canvas
+    const canvas = document.getElementById("canvas");
+    const ctx = canvas.getContext("2d");
+    ctx.fillStyle = "#F43578";
+
+    // On va animer la position d'un carré dans notre canvas
+    let position = { x: 0, y: 0 };
+
+    // On déclare la fonction qui va nous ppermettre de réinitialiser le canvas à chaque frame
+    // et de redesinner le carré à sa nouvelle position
+    function draw() {
+        ctx.clearRect(0, 0, 300, 300);
+        ctx.fillRect(position.x, position.y, 100, 100);
+    }
+
+    // On déclare l'animation
+    // Contrairement à un élément du DOM un canvas a besoin d'être redessiné à chaque frame
+    // donc on est obligé de déclarer la propriété onUpdate
+    // on déplace jusqu'à x: 200 et y: 200 car notre carré fait 100x100
+    const tween_7 = gsap.to(position, {
+        x: 200,
+        y: 200,
+        duration: 2,
+        paused: true,
+        onUpdate: draw
+    });
+
+    document.getElementById('anim_7_button').addEventListener('click', () => {
+        tween_7.restart();
+    });
 });
