@@ -103,4 +103,29 @@ window.addEventListener('DOMContentLoaded', () => {
     document.getElementById('anim_7_button').addEventListener('click', () => {
         tween_7.restart();
     });
+
+    // Animation 8 - Repeat et yoyo
+    const tween_8_1 = gsap.to(".animation--8 .square", {
+        x: 600,
+        repeat: -1,
+        duration: 2,
+        paused: true,
+    });
+    const tween_8_2 = gsap.to(".animation--8 .square", {
+        x: 600,
+        repeat: -1,
+        yoyo: true,
+        duration: 2,
+        paused: true
+    });
+    document.getElementById('anim_8_1_button').addEventListener('click', () => {
+        tween_8_2.pause();
+        gsap.set(".animation--8 .square", { x: 0 });
+        tween_8_1.restart();
+    });
+    document.getElementById('anim_8_2_button').addEventListener('click', () => {
+        tween_8_1.pause();
+        gsap.set(".animation--8 .square", { x: 0 });
+        tween_8_2.restart();
+    });
 });
