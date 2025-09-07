@@ -128,4 +128,97 @@ window.addEventListener('DOMContentLoaded', () => {
         gsap.set(".animation--8 .square", { x: 0 });
         tween_8_2.restart();
     });
+
+    // Animation 9 - Easing - power 1 à 4
+    const tween_9_1 = gsap.to(".animation--9 .square", { x: 600, duration: 2, paused: true, ease: 'power1.inOut' });
+    const tween_9_2 = gsap.to(".animation--9 .square", { x: 600, duration: 2, paused: true, ease: 'power2.inOut' });
+    const tween_9_3 = gsap.to(".animation--9 .square", { x: 600, duration: 2, paused: true, ease: 'power3.inOut' });
+    const tween_9_4 = gsap.to(".animation--9 .square", { x: 600, duration: 2, paused: true, ease: 'power4.inOut' });
+    document.getElementById('anim_9_1_button').addEventListener('click', () => {
+        tween_9_2.pause();
+        tween_9_3.pause();
+        tween_9_4.pause();
+        gsap.set(".animation--9 .square", { x: 0 });
+        tween_9_1.restart();
+    });
+    document.getElementById('anim_9_2_button').addEventListener('click', () => {
+        tween_9_1.pause();
+        tween_9_3.pause();
+        tween_9_4.pause();
+        gsap.set(".animation--9 .square", { x: 0 });
+        tween_9_2.restart();
+    });
+    document.getElementById('anim_9_3_button').addEventListener('click', () => {
+        tween_9_1.pause();
+        tween_9_2.pause();
+        tween_9_4.pause();
+        gsap.set(".animation--9 .square", { x: 0 });
+        tween_9_3.restart();
+    });
+    document.getElementById('anim_9_4_button').addEventListener('click', () => {
+        tween_9_1.pause();
+        tween_9_2.pause();
+        tween_9_3.pause();
+        gsap.set(".animation--9 .square", { x: 0 });
+        tween_9_4.restart();
+    });
+
+    // Animation 10 - Easing - back
+    const tween_10 = gsap.to(".animation--10 .square", { x: 600, duration: 2, paused: true, ease: 'back.inOut' });
+    document.getElementById('anim_10_button').addEventListener('click', () => {
+        tween_10.restart();
+    });
+
+    // Animation 11 - Easing - bounce
+    const tween_11 = gsap.to(".animation--11 .square", { x: 600, duration: 2, paused: true, ease: 'bounce.out' });
+    document.getElementById('anim_11_button').addEventListener('click', () => {
+        tween_11.restart();
+    });
+
+    // Animation 12 - Easing - circ
+    const tween_12 = gsap.to(".animation--12 .square", { x: 600, duration: 2, paused: true, ease: 'circ.out' });
+    document.getElementById('anim_12_button').addEventListener('click', () => {
+        tween_12.restart();
+    });
+
+    // Animation 13 - Easing - elastic
+    const tween_13 = gsap.to(".animation--13 .square", { x: 600, duration: 2, paused: true, ease: 'elastic.out' });
+    document.getElementById('anim_13_button').addEventListener('click', () => {
+        tween_13.restart();
+    });
+
+    // Animation 14 - Easing - expo
+    const tween_14 = gsap.to(".animation--14 .square", { x: 600, duration: 2, paused: true, ease: 'expo.out' });
+    document.getElementById('anim_14_button').addEventListener('click', () => {
+        tween_14.restart();
+    });
+
+    // Animation 15 - Easing - sine
+    const tween_15 = gsap.to(".animation--15 .square", { x: 600, duration: 2, paused: true, ease: 'sine.out' });
+    document.getElementById('anim_15_button').addEventListener('click', () => {
+        tween_15.restart();
+    });
+
+    // Animation 16 - Easing - sine
+    const tween_16_5 = gsap.to(".animation--16 .square", { x: 600, duration: 2, paused: true, ease: 'steps(5)' });
+    const tween_16_10 = gsap.to(".animation--16 .square", { x: 600, duration: 2, paused: true, ease: 'steps(10)' });
+    const tween_16_15 = gsap.to(".animation--16 .square", { x: 600, duration: 2, paused: true, ease: 'steps(15)' });
+    document.getElementById('anim_16_5_button').addEventListener('click', () => {
+        tween_16_10.pause();
+        tween_16_15.pause();
+        gsap.set(".animation--16 .square", { x: 0 });
+        tween_16_5.restart();
+    });
+    document.getElementById('anim_16_10_button').addEventListener('click', () => {
+        tween_16_5.pause();
+        tween_16_15.pause();
+        gsap.set(".animation--16 .square", { x: 0 });
+        tween_16_10.restart();
+    });
+    document.getElementById('anim_16_15_button').addEventListener('click', () => {
+        tween_16_5.pause();
+        tween_16_10.pause();
+        gsap.set(".animation--16 .square", { x: 0 });
+        tween_16_15.restart();
+    });
 });

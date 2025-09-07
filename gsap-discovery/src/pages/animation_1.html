@@ -11,10 +11,19 @@
                 <a href="../../index.html">Retour à l'accueil</a>
             </nav>
             <h1>Getting started</h1>
+            <nav>
+                <ul>
+                    <li><a href="#section_1">Décomposition d'un appel GSAP</a></li>
+                    <li><a href="#section_2">Découverte des différentes méthodes</a></li>
+                    <li><a href="#section_3">Les targets</a></li>
+                    <li><a href="#section_4">Les variables</a></li>
+                    <li><a href="#section_5">Easing</a></li>
+                </ul>
+            </nav>
         </header>
         <main>
             <p>Il est l'heure de commencer à apprendre ! 🤓</p>
-            <section>
+            <section id="section_1">
                 <h2>Décomposition d'un appel GSAP</h2>
                 <code>
                     gsap.to(".square", { x: 600 })
@@ -35,7 +44,7 @@
                 </ul>
             </section>
             <hr>
-            <section>
+            <section id="section_2">
                 <h2>Découverte des différentes méthodes</h2>
                 <h3>1 - gsap.to()</h3>
                 <p>
@@ -123,7 +132,7 @@
                 </div>
             </section>
             <hr>
-            <section>
+            <section id="section_3">
                 <h2>Les targets</h2>
                 <p>
                     Ce que GSAP appelle les <strong>targets</strong> ce sont tout simplement
@@ -156,7 +165,7 @@
                 </code>
             </section>
             <hr>
-            <section>
+            <section id="section_4">
                 <h2>Les variables</h2>
                 <h3>Les propriétés CSS</h3>
                 <p>
@@ -441,6 +450,134 @@
                     <button id="anim_8_1_button" class="button">Jouer l'animation en repeat</button>
                     <button id="anim_8_2_button" class="button">Jouer l'animation en repeat avec yoyo</button>
                 </div>
+            </section>
+            <hr>
+            <section id="section_5">
+                <h2>Easing</h2>
+                <p>
+                    La propriété "ease" est probablement la propriété la plus importante
+                    pour donner de la personnalité à son animation.<br />
+                    Elle permet en effet de gérer la méthode de déroulement de notre animation.<br/><br/>
+
+                    Derrière cette propriété se cache simplement une courbe mathématique avec laquelle on
+                    peut intéragir.
+                </p>
+                <p>
+                    Chaque méthode d'animation possède 3 types : <strong>in</strong>, <strong>out</strong> et
+                    <strong>inOut</strong>.
+                </p>
+                <ul>
+                    <li><strong>in</strong> : commence doucement</li>
+                    <li><strong>out</strong> : termine doucement</li>
+                    <li><strong>inOut</strong> : commence et termine doucement</li>
+                </ul>
+                <p>
+                    Il existe plusieurs méthodes que nous allons voir ci-dessous, mais on peut toutes les retrouver
+                    dans la <a href="https://gsap.com/resources/getting-started/Easing">documentation easing</a> de
+                    GSAP.
+                </p>
+                <h3>power de 1 à 4</h3>
+                <p>
+                    Correspond simplement à une accélération constante plus ou moins rapide
+                    avec un ralentissement en fonction du type choisi (in/out/inOut).
+                </p>
+                <div class="preview animation-container animation--9">
+                    <div class="square-ghost square-ghost--a">A</div>
+                    <div class="square">Square</div>
+                    <div class="square-ghost square-ghost--b">B</div>
+                    <button id="anim_9_1_button" class="button">power1.inOut</button>
+                    <button id="anim_9_2_button" class="button">power2.inOut</button>
+                    <button id="anim_9_3_button" class="button">power3.inOut</button>
+                    <button id="anim_9_4_button" class="button">power4.inOut</button>
+                </div>
+                <h3>back</h3>
+                <p>
+                    La courbe donne un un effet de retour en arrière, c'est à dire que l'effet
+                    va plus loin qu'il est censé allé avant d'atteindre son objectif.
+                </p>
+                <div class="preview animation-container animation--10">
+                    <div class="square-ghost square-ghost--a">A</div>
+                    <div class="square">Square</div>
+                    <div class="square-ghost square-ghost--b">B</div>
+                    <button id="anim_10_button" class="button">back.inOut</button>
+                </div>
+                <h3>bounce</h3>
+                <p>
+                    Effet assez simple à comrendre il s'agit d'un effet qui inclus un effet de
+                    rebond.
+                </p>
+                <div class="preview animation-container animation--11">
+                    <div class="square-ghost square-ghost--a">A</div>
+                    <div class="square">Square</div>
+                    <div class="square-ghost square-ghost--b">B</div>
+                    <button id="anim_11_button" class="button">bounce.out</button>
+                </div>
+                <h3>circ</h3>
+                <p>
+                    Effet incluant une courbe circulaire.
+                </p>
+                <div class="preview animation-container animation--12">
+                    <div class="square-ghost square-ghost--a">A</div>
+                    <div class="square">Square</div>
+                    <div class="square-ghost square-ghost--b">B</div>
+                    <button id="anim_12_button" class="button">circ.out</button>
+                </div>
+                <h3>elastic</h3>
+                <p>
+                    Effet incluant une courbe elastic, différent du rebond car cette fois-ci
+                    la courbe dépasse la destination avant de revenir.
+                </p>
+                <div class="preview animation-container animation--13">
+                    <div class="square-ghost square-ghost--a">A</div>
+                    <div class="square">Square</div>
+                    <div class="square-ghost square-ghost--b">B</div>
+                    <button id="anim_13_button" class="button">elastic.out</button>
+                </div>
+                <h3>expo</h3>
+                <p>
+                    Effet représentant simplement une courbe exponentielle.
+                </p>
+                <div class="preview animation-container animation--14">
+                    <div class="square-ghost square-ghost--a">A</div>
+                    <div class="square">Square</div>
+                    <div class="square-ghost square-ghost--b">B</div>
+                    <button id="anim_14_button" class="button">expo.out</button>
+                </div>
+                <h3>sine</h3>
+                <p>
+                    Effet représentant simplement une courbe sinusoidale.
+                </p>
+                <div class="preview animation-container animation--15">
+                    <div class="square-ghost square-ghost--a">A</div>
+                    <div class="square">Square</div>
+                    <div class="square-ghost square-ghost--b">B</div>
+                    <button id="anim_15_button" class="button">sine.out</button>
+                </div>
+                <h3>sine</h3>
+                <p>
+                    Effet représentant simplement une courbe sinusoidale.
+                </p>
+                <div class="preview animation-container animation--16">
+                    <div class="square-ghost square-ghost--a">A</div>
+                    <div class="square">Square</div>
+                    <div class="square-ghost square-ghost--b">B</div>
+                    <button id="anim_16_5_button" class="button">steps(5)</button>
+                    <button id="anim_16_10_button" class="button">steps(10)</button>
+                    <button id="anim_16_15_button" class="button">steps(15)</button>
+                </div>
+                <h3>Les plus complexes</h3>
+                <p>
+                    Il en existe d'autres qui nécessite des paramètrages plus complexes et
+                    qui permettent d'obtenir des rendus vraiment différents.
+                </p>
+                <ul>
+                    <li><strong>rough</strong></li>
+                    <li><strong>slow</strong></li>
+                    <li><strong>expoScale</strong></li>
+                    <li><strong>CustomEase</strong></li>
+                    <li><strong>CustomBounce</strong></li>
+                    <li><strong>CustomWiggle</strong></li>
+                </ul>
             </section>
         </main>
         <script type="module" src="../scripts/anim_1.js"></script>

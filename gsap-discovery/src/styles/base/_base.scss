@@ -16,6 +16,10 @@ hr {
     border-top: calc(var(--border-size) * 2) solid var(--clr-primary);
 }
 
+header {
+    margin-bottom: calc(var(--spacer) * 4);
+}
+
 /* Highlight */
 p.highlighted {
     padding: 1rem;
