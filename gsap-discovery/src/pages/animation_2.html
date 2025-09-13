@@ -30,11 +30,29 @@
                     de base est assez simple, il faut avoir une <strong>target</strong> qui cible
                     plusieurs éléments du DOM et ajouter la propriété objet stagger.
                 </p>
+                <p>
+                    Ci-dessous nous lui donnons la valeur de 0.25 afin de décaler l'animation de
+                    chacun des carré de 0.25 secondes !
+                </p>
+                <p>
+                    Et si nous mettions une valeur négative à la propriété stagger ?<br/>
+                    Cela jouera simplement en inversant l'ordre et donc commencera par
+                    le dernier carré à animer.
+                </p>
                 <code>
-                    const tween_1 = gsap.to('.animation--1 .square', { paused: true, x: 600, stagger: 0.25 });<br/><br/>
+                    // Animation 1 - Présentation<br/>
+                    const tween_1_1 = gsap.to('.animation--1 .square', { paused: true, x: 600, stagger: 0.25 });<br/>
+                    const tween_1_2 = gsap.to('.animation--1 .square', { paused: true, x: 600, stagger: -0.25 });<br/><br/>
 
-                    document.getElementById('anim_1_button').addEventListener('click', () => {<br/>
-                    &nbsp;&nbsp;&nbsp;&nbsp;tween_1.restart();<br/>
+                    document.getElementById('anim_1_1_button').addEventListener('click', () => {<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;tween_1_2.pause();<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;gsap.set('.animation--1 .square', { x: 0 });<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;tween_1_1.restart();<br/>
+                    });<br/>
+                    document.getElementById('anim_1_2_button').addEventListener('click', () => {<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;tween_1_1.pause();<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;gsap.set('.animation--1 .square', { x: 0 });<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;tween_1_2.restart();<br/>
                     });
                 </code>
                 <div class="preview animation-container animation--1">
@@ -43,7 +61,14 @@
                     <div class="square">Square</div>
                     <div class="square">Square</div>
                     <div class="square">Square</div>
-                    <button id="anim_1_button" class="button">Jouer avec un stagger à 0.25</button>
+                    <ul>
+                        <li>
+                            <button id="anim_1_1_button" class="button">Stagger à 0.25</button>
+                        </li>
+                        <li>
+                            <button id="anim_1_2_button" class="button">Stagger à -0.25</button>
+                        </li>
+                    </ul>
                 </div>
             </section>
         </main>

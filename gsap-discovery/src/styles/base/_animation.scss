@@ -109,8 +109,9 @@
             width: 8ch;
         }
 
-        .button {
-            margin-top: calc(var(--spacer) * 2);
+        ul {
+            display: flex;
+            gap: calc(var(--spacer) * 2);
         }
     }
 }
