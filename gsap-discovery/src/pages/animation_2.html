@@ -3,17 +3,49 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Animation 2</title>
+        <title>Stagger</title>
     </head>
     <body class="page page--category-2">
         <header>
-            <nav>
+            <nav aria-label="navigation principale">
                 <a href="../../index.html">Retour à l'accueil</a>
             </nav>
-            <h1>Animation 2</h1>
+            <h1>Stagger</h1>
+            <nav aria-label="navigation secondaire">
+                <ul>
+                    <li><a href="#section_1">Présentation du principe</a></li>
+                </ul>
+            </nav>
         </header>
         <main>
-            <p>Bienvenue dans le chapitre autour de l'animation 2</p>
+            <section id="section_1">
+                <h2>Présentation du principe</h2>
+                <p>
+                    L'idée est simple "<strong>stagger</strong>" signifie échelonnement, ce qui permet
+                    tout simplement d'exécuter des animation les unes après les autres,
+                    en y ajoutant un délai (en seconde).
+                </p>
+                <p>
+                    On verra qu'il existe différents moyen de gérer cet échelonnement mais le principe
+                    de base est assez simple, il faut avoir une <strong>target</strong> qui cible
+                    plusieurs éléments du DOM et ajouter la propriété objet stagger.
+                </p>
+                <code>
+                    const tween_1 = gsap.to('.animation--1 .square', { paused: true, x: 600, stagger: 0.25 });<br/><br/>
+
+                    document.getElementById('anim_1_button').addEventListener('click', () => {<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;tween_1.restart();<br/>
+                    });
+                </code>
+                <div class="preview animation-container animation--1">
+                    <div class="square">Square</div>
+                    <div class="square">Square</div>
+                    <div class="square">Square</div>
+                    <div class="square">Square</div>
+                    <div class="square">Square</div>
+                    <button id="anim_1_button" class="button">Jouer avec un stagger à 0.25</button>
+                </div>
+            </section>
         </main>
         <script type="module" src="../scripts/anim_2.js"></script>
     </body>

@@ -71,8 +71,6 @@ window.addEventListener('DOMContentLoaded', () => {
         tween_6_2.restart();
     });
 
-
-
     // Animation 7 - Canvas
     const canvas = document.getElementById("canvas");
     const ctx = canvas.getContext("2d");

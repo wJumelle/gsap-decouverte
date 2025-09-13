@@ -46,52 +46,71 @@
 }
 
 /* Animations Getting Started */
-.animation--1,
-.animation--2,
-.animation--3,
-.animation--4,
-.animation--8,
-.animation--9,
-.animation--10,
-.animation--11,
-.animation--12,
-.animation--13,
-.animation--14,
-.animation--15,
-.animation--16 {
-    .square-ghost {
-        position: absolute;
-        top: 0;
+.page--category-1 {
+    .animation--1,
+    .animation--2,
+    .animation--3,
+    .animation--4,
+    .animation--8,
+    .animation--9,
+    .animation--10,
+    .animation--11,
+    .animation--12,
+    .animation--13,
+    .animation--14,
+    .animation--15,
+    .animation--16 {
+        .square-ghost {
+            position: absolute;
+            top: 0;
+        }
+
+        .square-ghost--a {
+            left: 0;
+        }
+
+        .square-ghost--b {
+            left: 600px;
+        }
+
+        .square {
+            position: relative;
+            left: 0;
+            z-index: 5;
+        }
     }
 
-    .square-ghost--a {
-        left: 0;
+    .animation--5,
+    .animation--6 {
+        svg {
+            border: var(--border-size) solid var(--clr-primary);
+            width: 300px;
+            aspect-ratio: 1 / 1;
+        }
     }
 
-    .square-ghost--b {
-        left: 600px;
-    }
-
-    .square {
-        position: relative;
-        left: 0;
-        z-index: 5;
+    .animation--7 {
+        canvas {
+            border: var(--border-size) solid var(--clr-primary);
+            width: 300px;
+            aspect-ratio: 1 / 1;
+        }
     }
 }
 
-.animation--5,
-.animation--6 {
-    svg {
-        border: var(--border-size) solid var(--clr-primary);
-        width: 300px;
-        aspect-ratio: 1 / 1;
-    }
-}
+.page--category-2 {
+    .animation--1 {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: calc(var(--spacer) * 2);
 
-.animation--7 {
-    canvas {
-        border: var(--border-size) solid var(--clr-primary);
-        width: 300px;
-        aspect-ratio: 1 / 1;
+        .square {
+            width: 8ch;
+        }
+
+        .button {
+            margin-top: calc(var(--spacer) * 2);
+        }
     }
 }
